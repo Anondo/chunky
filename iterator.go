@@ -1,10 +1,6 @@
 package chunky
 
 type (
-	//Iterator ...
-	Iterator interface {
-		ChunkUp()
-	}
 	//IntIterator ...
 	IntIterator struct {
 		Chunkable   []int
