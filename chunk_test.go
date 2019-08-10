@@ -8,7 +8,12 @@ import (
 func TestIntIterator(t *testing.T) {
 
 	data := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	i := NewIntIterator(data, 5)
+	i := IntIterator{
+		Chunkable:   data,
+		ChunkLength: 5,
+	}
+
+	i.ChunkUp()
 
 	chunk1 := data[:5]
 	chunk2 := data[5:]
@@ -27,7 +32,11 @@ func TestIntIterator(t *testing.T) {
 func TestFloatIterator(t *testing.T) {
 
 	data := []float64{1.3, 3.4, 2.3, 5.6, 3.44, 2.444, 7.65, 34.6, 11.2}
-	i := NewFloat64Iterator(data, 5)
+	i := Float64Iterator{
+		Chunkable:   data,
+		ChunkLength: 5,
+	}
+	i.ChunkUp()
 
 	chunk1 := data[:5]
 	chunk2 := data[5:]
@@ -45,7 +54,12 @@ func TestFloatIterator(t *testing.T) {
 func TestStringIterator(t *testing.T) {
 
 	data := []string{"Hello", "World", "This", "is", "chunky"}
-	i := NewStringIterator(data, 3)
+	i := StringIterator{
+		Chunkable:   data,
+		ChunkLength: 3,
+	}
+
+	i.ChunkUp()
 
 	chunk1 := data[:3]
 	chunk2 := data[3:]
@@ -65,7 +79,12 @@ func TestComplexIterator(t *testing.T) {
 	data := []complex64{complex(1, 2), complex(2, 2), complex(3, 2), complex(4, 2),
 		complex(5, 2), complex(6, 2), complex(7, 2), complex(8, 2), complex(9, 2)}
 
-	i := NewComplex64Iterator(data, 3)
+	i := Complex64Iterator{
+		Chunkable:   data,
+		ChunkLength: 3,
+	}
+
+	i.ChunkUp()
 
 	chunk1 := data[:3]
 	chunk2 := data[3:6]

@@ -1,112 +1,136 @@
 package chunky
 
 type (
+
+	// Iterator ...
+	Iterator interface {
+		ChunkUp()
+		Next() bool
+	}
+
 	//IntIterator ...
 	IntIterator struct {
-		Chunkable   []int
-		ChunkLength int
-		Chunk       [][]int
+		Chunkable    []int
+		ChunkLength  int
+		Chunk        [][]int
+		CurrentBlock []int
 	}
 	//Int8Iterator ...
 	Int8Iterator struct {
-		Chunkable   []int8
-		ChunkLength int
-		Chunk       [][]int8
+		Chunkable    []int8
+		ChunkLength  int
+		Chunk        [][]int8
+		CurrentBlock []int8
 	}
 	//Int16Iterator ...
 	Int16Iterator struct {
-		Chunkable   []int16
-		ChunkLength int
-		Chunk       [][]int16
+		Chunkable    []int16
+		ChunkLength  int
+		Chunk        [][]int16
+		CurrentBlock []int16
 	}
 	//Int32Iterator ...
 	Int32Iterator struct {
-		Chunkable   []int32
-		ChunkLength int
-		Chunk       [][]int32
+		Chunkable    []int32
+		ChunkLength  int
+		Chunk        [][]int32
+		CurrentBlock []int32
 	}
 	//Int64Iterator ...
 	Int64Iterator struct {
-		Chunkable   []int64
-		ChunkLength int
-		Chunk       [][]int64
+		Chunkable    []int64
+		ChunkLength  int
+		Chunk        [][]int64
+		CurrentBlock []int64
 	}
 	//UintIterator ...
 	UintIterator struct {
-		Chunkable   []uint
-		ChunkLength int
-		Chunk       [][]uint
+		Chunkable    []uint
+		ChunkLength  int
+		Chunk        [][]uint
+		CurrentBlock []uint
 	}
 	//Uint8Iterator ...
 	Uint8Iterator struct {
-		Chunkable   []uint8
-		ChunkLength int
-		Chunk       [][]uint8
+		Chunkable    []uint8
+		ChunkLength  int
+		Chunk        [][]uint8
+		CurrentBlock []uint8
 	}
 	//Uint16Iterator ...
 	Uint16Iterator struct {
-		Chunkable   []uint16
-		ChunkLength int
-		Chunk       [][]uint16
+		Chunkable    []uint16
+		ChunkLength  int
+		Chunk        [][]uint16
+		CurrentBlock []uint16
 	}
 	//Uint32Iterator ...
 	Uint32Iterator struct {
-		Chunkable   []uint32
-		ChunkLength int
-		Chunk       [][]uint32
+		Chunkable    []uint32
+		ChunkLength  int
+		Chunk        [][]uint32
+		CurrentBlock []uint32
 	}
 	//Uint64Iterator ...
 	Uint64Iterator struct {
-		Chunkable   []uint64
-		ChunkLength int
-		Chunk       [][]uint64
+		Chunkable    []uint64
+		ChunkLength  int
+		Chunk        [][]uint64
+		CurrentBlock []uint64
 	}
 	//UintptrIterator ...
 	UintptrIterator struct {
-		Chunkable   []uintptr
-		ChunkLength int
-		Chunk       [][]uintptr
+		Chunkable    []uintptr
+		ChunkLength  int
+		Chunk        [][]uintptr
+		CurrentBlock []uintptr
 	}
 	//Float32Iterator ...
 	Float32Iterator struct {
-		Chunkable   []float32
-		ChunkLength int
-		Chunk       [][]float32
+		Chunkable    []float32
+		ChunkLength  int
+		Chunk        [][]float32
+		CurrentBlock []float32
 	}
 	//Float64Iterator ...
 	Float64Iterator struct {
-		Chunkable   []float64
-		ChunkLength int
-		Chunk       [][]float64
+		Chunkable    []float64
+		ChunkLength  int
+		Chunk        [][]float64
+		CurrentBlock []float64
 	}
 	//Complex64Iterator ...
 	Complex64Iterator struct {
-		Chunkable   []complex64
-		ChunkLength int
-		Chunk       [][]complex64
+		Chunkable    []complex64
+		ChunkLength  int
+		Chunk        [][]complex64
+		CurrentBlock []complex64
 	}
 	//Complex128Iterator ...
 	Complex128Iterator struct {
-		Chunkable   []complex128
-		ChunkLength int
-		Chunk       [][]complex128
+		Chunkable    []complex128
+		ChunkLength  int
+		Chunk        [][]complex128
+		CurrentBlock []complex128
 	}
 	//StringIterator ...
 	StringIterator struct {
-		Chunkable   []string
-		ChunkLength int
-		Chunk       [][]string
+		Chunkable    []string
+		ChunkLength  int
+		Chunk        [][]string
+		CurrentBlock []string
 	}
 	//BoolIterator ...
 	BoolIterator struct {
-		Chunkable   []bool
-		ChunkLength int
-		Chunk       [][]bool
+		Chunkable    []bool
+		ChunkLength  int
+		Chunk        [][]bool
+		CurrentBlock []bool
 	}
 )
 
 // NewIntIterator ...
-func NewIntIterator(c []int, cl int) *IntIterator {
+func NewIntIterator(c []int, cl int) Iterator {
 	i := &IntIterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -119,7 +143,7 @@ func NewIntIterator(c []int, cl int) *IntIterator {
 }
 
 // NewInt8Iterator ...
-func NewInt8Iterator(c []int8, cl int) *Int8Iterator {
+func NewInt8Iterator(c []int8, cl int) Iterator {
 	i := &Int8Iterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -132,7 +156,7 @@ func NewInt8Iterator(c []int8, cl int) *Int8Iterator {
 }
 
 // NewInt16Iterator ...
-func NewInt16Iterator(c []int16, cl int) *Int16Iterator {
+func NewInt16Iterator(c []int16, cl int) Iterator {
 	i := &Int16Iterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -145,7 +169,7 @@ func NewInt16Iterator(c []int16, cl int) *Int16Iterator {
 }
 
 // NewInt32Iterator ...
-func NewInt32Iterator(c []int32, cl int) *Int32Iterator {
+func NewInt32Iterator(c []int32, cl int) Iterator {
 	i := &Int32Iterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -158,7 +182,7 @@ func NewInt32Iterator(c []int32, cl int) *Int32Iterator {
 }
 
 // NewInt64Iterator ...
-func NewInt64Iterator(c []int64, cl int) *Int64Iterator {
+func NewInt64Iterator(c []int64, cl int) Iterator {
 	i := &Int64Iterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -171,7 +195,7 @@ func NewInt64Iterator(c []int64, cl int) *Int64Iterator {
 }
 
 // NewUintIterator ...
-func NewUintIterator(c []uint, cl int) *UintIterator {
+func NewUintIterator(c []uint, cl int) Iterator {
 	i := &UintIterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -184,7 +208,7 @@ func NewUintIterator(c []uint, cl int) *UintIterator {
 }
 
 // NewUint8Iterator ...
-func NewUint8Iterator(c []uint8, cl int) *Uint8Iterator {
+func NewUint8Iterator(c []uint8, cl int) Iterator {
 	i := &Uint8Iterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -197,7 +221,7 @@ func NewUint8Iterator(c []uint8, cl int) *Uint8Iterator {
 }
 
 // NewUint16Iterator ...
-func NewUint16Iterator(c []uint16, cl int) *Uint16Iterator {
+func NewUint16Iterator(c []uint16, cl int) Iterator {
 	i := &Uint16Iterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -210,7 +234,7 @@ func NewUint16Iterator(c []uint16, cl int) *Uint16Iterator {
 }
 
 // NewUint32Iterator ...
-func NewUint32Iterator(c []uint32, cl int) *Uint32Iterator {
+func NewUint32Iterator(c []uint32, cl int) Iterator {
 	i := &Uint32Iterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -223,7 +247,7 @@ func NewUint32Iterator(c []uint32, cl int) *Uint32Iterator {
 }
 
 // NewUint64Iterator ...
-func NewUint64Iterator(c []uint64, cl int) *Uint64Iterator {
+func NewUint64Iterator(c []uint64, cl int) Iterator {
 	i := &Uint64Iterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -236,7 +260,7 @@ func NewUint64Iterator(c []uint64, cl int) *Uint64Iterator {
 }
 
 // NewUintptrIterator ...
-func NewUintptrIterator(c []uintptr, cl int) *UintptrIterator {
+func NewUintptrIterator(c []uintptr, cl int) Iterator {
 	i := &UintptrIterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -249,7 +273,7 @@ func NewUintptrIterator(c []uintptr, cl int) *UintptrIterator {
 }
 
 // NewFloat32Iterator ...
-func NewFloat32Iterator(c []float32, cl int) *Float32Iterator {
+func NewFloat32Iterator(c []float32, cl int) Iterator {
 	i := &Float32Iterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -262,7 +286,7 @@ func NewFloat32Iterator(c []float32, cl int) *Float32Iterator {
 }
 
 // NewFloat64Iterator ...
-func NewFloat64Iterator(c []float64, cl int) *Float64Iterator {
+func NewFloat64Iterator(c []float64, cl int) Iterator {
 	i := &Float64Iterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -275,7 +299,7 @@ func NewFloat64Iterator(c []float64, cl int) *Float64Iterator {
 }
 
 // NewComplex64Iterator ...
-func NewComplex64Iterator(c []complex64, cl int) *Complex64Iterator {
+func NewComplex64Iterator(c []complex64, cl int) Iterator {
 	i := &Complex64Iterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -288,7 +312,7 @@ func NewComplex64Iterator(c []complex64, cl int) *Complex64Iterator {
 }
 
 // NewComplex128Iterator ...
-func NewComplex128Iterator(c []complex128, cl int) *Complex128Iterator {
+func NewComplex128Iterator(c []complex128, cl int) Iterator {
 	i := &Complex128Iterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -301,7 +325,7 @@ func NewComplex128Iterator(c []complex128, cl int) *Complex128Iterator {
 }
 
 // NewStringIterator ...
-func NewStringIterator(c []string, cl int) *StringIterator {
+func NewStringIterator(c []string, cl int) Iterator {
 	i := &StringIterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -314,7 +338,7 @@ func NewStringIterator(c []string, cl int) *StringIterator {
 }
 
 // NewBoolIterator ...
-func NewBoolIterator(c []bool, cl int) *BoolIterator {
+func NewBoolIterator(c []bool, cl int) Iterator {
 	i := &BoolIterator{
 		Chunkable:   c,
 		ChunkLength: cl,
@@ -323,5 +347,123 @@ func NewBoolIterator(c []bool, cl int) *BoolIterator {
 	i.ChunkUp()
 
 	return i
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *IntIterator) GetCurrentBlock() []int {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *Int8Iterator) GetCurrentBlock() []int8 {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *Int16Iterator) GetCurrentBlock() []int16 {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *Int32Iterator) GetCurrentBlock() []int32 {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *Int64Iterator) GetCurrentBlock() []int64 {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *UintIterator) GetCurrentBlock() []uint {
+
+	return itr.CurrentBlock
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *Uint8Iterator) GetCurrentBlock() []uint8 {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *Uint16Iterator) GetCurrentBlock() []uint16 {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *Uint32Iterator) GetCurrentBlock() []uint32 {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *Uint64Iterator) GetCurrentBlock() []uint64 {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *UintptrIterator) GetCurrentBlock() []uintptr {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *Float32Iterator) GetCurrentBlock() []float32 {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *Float64Iterator) GetCurrentBlock() []float64 {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *Complex64Iterator) GetCurrentBlock() []complex64 {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *Complex128Iterator) GetCurrentBlock() []complex128 {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *StringIterator) GetCurrentBlock() []string {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *BoolIterator) GetCurrentBlock() []bool {
+
+	return itr.CurrentBlock
 
 }
