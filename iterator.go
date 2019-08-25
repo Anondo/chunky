@@ -6,6 +6,7 @@ type (
 	Iterator interface {
 		ChunkUp()
 		Next() bool
+		GetCurrentBlock() interface{}
 	}
 
 	//IntIterator ...
@@ -351,118 +352,118 @@ func NewBoolIterator(c []bool, cl int) Iterator {
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *IntIterator) GetCurrentBlock() []int {
+func (itr *IntIterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *Int8Iterator) GetCurrentBlock() []int8 {
+func (itr *Int8Iterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *Int16Iterator) GetCurrentBlock() []int16 {
+func (itr *Int16Iterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *Int32Iterator) GetCurrentBlock() []int32 {
+func (itr *Int32Iterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *Int64Iterator) GetCurrentBlock() []int64 {
+func (itr *Int64Iterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *UintIterator) GetCurrentBlock() []uint {
+func (itr *UintIterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *Uint8Iterator) GetCurrentBlock() []uint8 {
-
-	return itr.CurrentBlock
-
-}
-
-// GetCurrentBlock returns the current block of chunk
-func (itr *Uint16Iterator) GetCurrentBlock() []uint16 {
+func (itr *Uint8Iterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *Uint32Iterator) GetCurrentBlock() []uint32 {
+func (itr *Uint16Iterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *Uint64Iterator) GetCurrentBlock() []uint64 {
+func (itr *Uint32Iterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *UintptrIterator) GetCurrentBlock() []uintptr {
+func (itr *Uint64Iterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *Float32Iterator) GetCurrentBlock() []float32 {
+func (itr *UintptrIterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *Float64Iterator) GetCurrentBlock() []float64 {
+func (itr *Float32Iterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *Complex64Iterator) GetCurrentBlock() []complex64 {
+func (itr *Float64Iterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *Complex128Iterator) GetCurrentBlock() []complex128 {
+func (itr *Complex64Iterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *StringIterator) GetCurrentBlock() []string {
+func (itr *Complex128Iterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
 }
 
 // GetCurrentBlock returns the current block of chunk
-func (itr *BoolIterator) GetCurrentBlock() []bool {
+func (itr *StringIterator) GetCurrentBlock() interface{} {
+
+	return itr.CurrentBlock
+
+}
+
+// GetCurrentBlock returns the current block of chunk
+func (itr *BoolIterator) GetCurrentBlock() interface{} {
 
 	return itr.CurrentBlock
 
