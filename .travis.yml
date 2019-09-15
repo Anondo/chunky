@@ -3,8 +3,7 @@ dist: xenial
 language: go
 
 env:
-  - GO111MODULE=on
-  - GOFLAGS='-mod vendor'
+  - GO111MODULE=auto
 
 go:
   - 1.12.x
@@ -12,10 +11,9 @@ go:
 git:
   depth: 1
 
-install: true
 
 notifications:
   email: true
 
 script:
-  - go test -v -race ./...  
+  - go test -v -race ./...
