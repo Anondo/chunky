@@ -131,10 +131,10 @@ type (
 )
 
 // NewIntIterator ...
-func NewIntIterator(c []int, cl int) Iterator {
+func NewIntIterator(chunkable []int, chunkLength int) Iterator {
 	i := &IntIterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -144,10 +144,10 @@ func NewIntIterator(c []int, cl int) Iterator {
 }
 
 // NewInt8Iterator ...
-func NewInt8Iterator(c []int8, cl int) Iterator {
+func NewInt8Iterator(chunkable []int8, chunkLength int) Iterator {
 	i := &Int8Iterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -157,10 +157,10 @@ func NewInt8Iterator(c []int8, cl int) Iterator {
 }
 
 // NewInt16Iterator ...
-func NewInt16Iterator(c []int16, cl int) Iterator {
+func NewInt16Iterator(chunkable []int16, chunkLength int) Iterator {
 	i := &Int16Iterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -170,10 +170,10 @@ func NewInt16Iterator(c []int16, cl int) Iterator {
 }
 
 // NewInt32Iterator ...
-func NewInt32Iterator(c []int32, cl int) Iterator {
+func NewInt32Iterator(chunkable []int32, chunkLength int) Iterator {
 	i := &Int32Iterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -183,10 +183,10 @@ func NewInt32Iterator(c []int32, cl int) Iterator {
 }
 
 // NewInt64Iterator ...
-func NewInt64Iterator(c []int64, cl int) Iterator {
+func NewInt64Iterator(chunkable []int64, chunkLength int) Iterator {
 	i := &Int64Iterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -196,10 +196,10 @@ func NewInt64Iterator(c []int64, cl int) Iterator {
 }
 
 // NewUintIterator ...
-func NewUintIterator(c []uint, cl int) Iterator {
+func NewUintIterator(chunkable []uint, chunkLength int) Iterator {
 	i := &UintIterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -209,10 +209,10 @@ func NewUintIterator(c []uint, cl int) Iterator {
 }
 
 // NewUint8Iterator ...
-func NewUint8Iterator(c []uint8, cl int) Iterator {
+func NewUint8Iterator(chunkable []uint8, chunkLength int) Iterator {
 	i := &Uint8Iterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -222,10 +222,10 @@ func NewUint8Iterator(c []uint8, cl int) Iterator {
 }
 
 // NewUint16Iterator ...
-func NewUint16Iterator(c []uint16, cl int) Iterator {
+func NewUint16Iterator(chunkable []uint16, chunkLength int) Iterator {
 	i := &Uint16Iterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -235,10 +235,10 @@ func NewUint16Iterator(c []uint16, cl int) Iterator {
 }
 
 // NewUint32Iterator ...
-func NewUint32Iterator(c []uint32, cl int) Iterator {
+func NewUint32Iterator(chunkable []uint32, chunkLength int) Iterator {
 	i := &Uint32Iterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -248,10 +248,10 @@ func NewUint32Iterator(c []uint32, cl int) Iterator {
 }
 
 // NewUint64Iterator ...
-func NewUint64Iterator(c []uint64, cl int) Iterator {
+func NewUint64Iterator(chunkable []uint64, chunkLength int) Iterator {
 	i := &Uint64Iterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -261,10 +261,10 @@ func NewUint64Iterator(c []uint64, cl int) Iterator {
 }
 
 // NewUintptrIterator ...
-func NewUintptrIterator(c []uintptr, cl int) Iterator {
+func NewUintptrIterator(chunkable []uintptr, chunkLength int) Iterator {
 	i := &UintptrIterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -274,10 +274,10 @@ func NewUintptrIterator(c []uintptr, cl int) Iterator {
 }
 
 // NewFloat32Iterator ...
-func NewFloat32Iterator(c []float32, cl int) Iterator {
+func NewFloat32Iterator(chunkable []float32, chunkLength int) Iterator {
 	i := &Float32Iterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -287,10 +287,10 @@ func NewFloat32Iterator(c []float32, cl int) Iterator {
 }
 
 // NewFloat64Iterator ...
-func NewFloat64Iterator(c []float64, cl int) Iterator {
+func NewFloat64Iterator(chunkable []float64, chunkLength int) Iterator {
 	i := &Float64Iterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -300,10 +300,10 @@ func NewFloat64Iterator(c []float64, cl int) Iterator {
 }
 
 // NewComplex64Iterator ...
-func NewComplex64Iterator(c []complex64, cl int) Iterator {
+func NewComplex64Iterator(chunkable []complex64, chunkLength int) Iterator {
 	i := &Complex64Iterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -313,10 +313,10 @@ func NewComplex64Iterator(c []complex64, cl int) Iterator {
 }
 
 // NewComplex128Iterator ...
-func NewComplex128Iterator(c []complex128, cl int) Iterator {
+func NewComplex128Iterator(chunkable []complex128, chunkLength int) Iterator {
 	i := &Complex128Iterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -326,10 +326,10 @@ func NewComplex128Iterator(c []complex128, cl int) Iterator {
 }
 
 // NewStringIterator ...
-func NewStringIterator(c []string, cl int) Iterator {
+func NewStringIterator(chunkable []string, chunkLength int) Iterator {
 	i := &StringIterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
@@ -339,10 +339,10 @@ func NewStringIterator(c []string, cl int) Iterator {
 }
 
 // NewBoolIterator ...
-func NewBoolIterator(c []bool, cl int) Iterator {
+func NewBoolIterator(chunkable []bool, chunkLength int) Iterator {
 	i := &BoolIterator{
-		Chunkable:   c,
-		ChunkLength: cl,
+		Chunkable:   chunkable,
+		ChunkLength: chunkLength,
 	}
 
 	i.ChunkUp()
